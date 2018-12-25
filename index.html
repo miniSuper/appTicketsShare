@@ -24,102 +24,24 @@
     </div>
   </section>
   <section class="ticket-box">
-    <div class="ticket">
+    <div class="ticket" v-for="ticket in ticketList" v-cloak>
       <div class="outline">
         <div class="t-left">
-          <div class="price">50</div>
-          <div class="condition">满1000元立减</div>
+          <div class="price">{{ticket.money}}</div>
+          <div class="condition">{{ticket.rule}}</div>
         </div>
         <div class="t-right">
-          <div class="ticket-name">一品威客内部优惠券</div>
+          <div class="ticket-name">{{ticket.coupon_name}}</div>
           <div class="ticket-date">
             <p>有效期至</p>
-            <p>2018.09.23 21:00</p>
+            <p>{{ticket.time_end_use}}</p>
           </div>
           <button class="btn-get">立即领取</button>
         </div>
       </div>
       <div class="detail">
         <div class="fold">详细信息 <button class="btn-open"></button></div>
-        <div class="open">
-          <h6 class="open-title">用券规则</h6>
-          <p>全平台 | 不可叠加使用 | XXXXX</p>
-          <h6 class="open-title">用券说明</h6>
-          <p>1、优惠券是仅限在乐视商城使用，按面值总额减免支付的优惠码。</p>
-          <p>2、优惠券分三种：满减券、免邮券、以旧换新优惠券。</p>
-          <p>3、优惠券获取方式：通过乐视商城的买赠、活动参与等形式获取。</p>
-          <p>
-            4、使用满减券、免邮券提交的订单，在订单未支付时取消订单，则订单取消后，系统自动返还相应的优惠券（一般1小时内返还）
-            单被支付后，取消某一子单或取消全部子单，优惠券均不返还。
-            使用以旧换新优惠券提交的购新订单，在订单未支付时取消订单，系统自动返还相应的优惠券（一般1小时内返还）；在订单被支付后取消订单，待使用优惠券的所有子单现金部分均退款完成后，系统自动返还相应的优惠券（一般1小时内返还）。如仍存在未退款的子单，请继续操作完成退货
-          </p>
-          <p>5、使用优惠券的订单退货，优惠券不予返还。</p>
-        </div>
-      </div>
-    </div>
-    <div class="ticket">
-      <div class="outline">
-        <div class="t-left">
-          <div class="price">50</div>
-          <div class="condition">满1000元立减</div>
-        </div>
-        <div class="t-right">
-          <div class="ticket-name">一品威客内部优惠券</div>
-          <div class="ticket-date">
-            <p>有效期至</p>
-            <p>2018.09.23 21:00</p>
-          </div>
-          <button class="btn-get">立即领取</button>
-        </div>
-      </div>
-      <div class="detail">
-        <div class="fold">详细信息 <button class="btn-open"></button></div>
-        <div class="open">
-          <h6 class="open-title">用券规则</h6>
-          <p>全平台 | 不可叠加使用 | XXXXX</p>
-          <h6 class="open-title">用券说明</h6>
-          <p>1、优惠券是仅限在乐视商城使用，按面值总额减免支付的优惠码。</p>
-          <p>2、优惠券分三种：满减券、免邮券、以旧换新优惠券。</p>
-          <p>3、优惠券获取方式：通过乐视商城的买赠、活动参与等形式获取。</p>
-          <p>
-            4、使用满减券、免邮券提交的订单，在订单未支付时取消订单，则订单取消后，系统自动返还相应的优惠券（一般1小时内返还）
-            单被支付后，取消某一子单或取消全部子单，优惠券均不返还。
-            使用以旧换新优惠券提交的购新订单，在订单未支付时取消订单，系统自动返还相应的优惠券（一般1小时内返还）；在订单被支付后取消订单，待使用优惠券的所有子单现金部分均退款完成后，系统自动返还相应的优惠券（一般1小时内返还）。如仍存在未退款的子单，请继续操作完成退货
-          </p>
-          <p>5、使用优惠券的订单退货，优惠券不予返还。</p>
-        </div>
-      </div>
-    </div>
-    <div class="ticket">
-      <div class="outline">
-        <div class="t-left">
-          <div class="price">50</div>
-          <div class="condition">满1000元立减</div>
-        </div>
-        <div class="t-right">
-          <div class="ticket-name">一品威客内部优惠券</div>
-          <div class="ticket-date">
-            <p>有效期至</p>
-            <p>2018.09.23 21:00</p>
-          </div>
-          <button class="btn-overdue">已过期</button>
-        </div>
-      </div>
-      <div class="detail">
-        <div class="fold">详细信息 <button class="btn-open"></button></div>
-        <div class="open">
-          <h6 class="open-title">用券规则</h6>
-          <p>全平台 | 不可叠加使用 | XXXXX</p>
-          <h6 class="open-title">用券说明</h6>
-          <p>1、优惠券是仅限在乐视商城使用，按面值总额减免支付的优惠码。</p>
-          <p>2、优惠券分三种：满减券、免邮券、以旧换新优惠券。</p>
-          <p>3、优惠券获取方式：通过乐视商城的买赠、活动参与等形式获取。</p>
-          <p>
-            4、使用满减券、免邮券提交的订单，在订单未支付时取消订单，则订单取消后，系统自动返还相应的优惠券（一般1小时内返还）
-            单被支付后，取消某一子单或取消全部子单，优惠券均不返还。
-            使用以旧换新优惠券提交的购新订单，在订单未支付时取消订单，系统自动返还相应的优惠券（一般1小时内返还）；在订单被支付后取消订单，待使用优惠券的所有子单现金部分均退款完成后，系统自动返还相应的优惠券（一般1小时内返还）。如仍存在未退款的子单，请继续操作完成退货
-          </p>
-          <p>5、使用优惠券的订单退货，优惠券不予返还。</p>
+        <div class="open" v-html="ticket.desc">
         </div>
       </div>
     </div>

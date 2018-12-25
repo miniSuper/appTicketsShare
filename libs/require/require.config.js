@@ -5,7 +5,8 @@ require.config({
         "layer": "../libs/layer/layer",
         "jquery": '../libs/jquery/jquery.min',
         "css": "../libs/require/css/css.min",
-        "vue": "../libs/vue/vue"
+        "vue": "../libs/vue/vue",
+        "js-cookie": "../libs/js-cookie/js-cookie"
     },
     shim: {
         "layer": {

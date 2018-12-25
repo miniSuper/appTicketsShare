@@ -1,7 +1,10 @@
 body {
   width: 6.4rem;
+  padding-bottom: 1rem;
   background-color: #efefef;
 }
+
+
 
 /* footer */
 header {
@@ -51,6 +54,10 @@ header .back {
 }
 
 /* ticket-box */
+[v-cloak] {
+  display: none;
+}
+
 .ticket {
   width: 6rem;
   margin: 0 auto;
@@ -60,7 +67,6 @@ header .back {
 
 .ticket .outline {
   display: flex;
-  height: 1.5rem;
   border-bottom: 1px dashed #f1ccd9;
 }
 
@@ -99,8 +105,10 @@ header .back {
 }
 
 .ticket .condition {
-  font-size: 0.24rem;
+  font-size: 0.2rem;
+  line-height: 0.24rem;
   text-align: center;
+  padding: 0 0.2rem 0.2rem 0.2rem;
 }
 
 .ticket .ticket-name {
