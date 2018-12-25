@@ -1,0 +1,87 @@
+body {
+  width: 6.4rem;
+  background-color: #efefef;
+}
+
+header {
+  position: relative;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  text-align: center;
+  font-size: 0.3rem;
+  color: #333;
+  width: 100%;
+  background-color: #fff;
+}
+
+header .back {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.9rem;
+  height: 0.8rem;
+  background: transparent url('../images/arrow_left_red.png') no-repeat center center;
+  background-size: 0.18rem 0.32rem;
+}
+
+.banner {
+  width: 100%;
+}
+
+.bg-banner {
+  width: 100%;
+}
+
+.btn-promote-wrapper {
+  width: 100%;
+  height: 0.9rem;
+  padding: 0.3rem 0;
+  background-color: #fff;
+}
+
+.btn-promote {
+  width: 5.5rem;
+  text-align: center;
+  line-height: 0.9rem;
+  font-size: 0.3rem;
+  font-weight: 400;
+  height: 0.9rem;
+  margin: 0 auto;
+  color: #fff;
+  background-color: #f84e4e;
+  border-radius: 4px;
+}
+
+.info {
+  font-size: 0.2rem;
+  line-height: 0.3rem;
+  color: #444;
+  margin-top: 0.2rem;
+  background-color: #fff;
+  padding: 0.3rem;
+}
+
+.info .title-normal {
+  font-size: 0.3rem;
+  color: #000;
+  margin: 0.3rem 0;
+}
+
+.info .title-theme {
+  font-size: 0.3rem;
+  line-height: 0.4rem;
+  color: #f84e4e;
+  margin: 0.3rem 0;
+  padding-left: 0.5rem;
+}
+
+.info .title-zhuce {
+  background: #fff url('../images/icon-zhuce.png') no-repeat left center;
+  background-size: contain;
+}
+
+.info .title-renwu {
+  background: #fff url('../images/icon-renwu.png') no-repeat left center;
+  background-size: contain;
+}
