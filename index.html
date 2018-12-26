@@ -1,92 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>赠送优惠券</title>
+    <script src="./js/flexible.js"></script>
+    <link rel="stylesheet" href="./css/init.css" class="href" />
+    <link rel="stylesheet" href="./css/index.css" class="href" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>赠送优惠券</title>
-  <script src="./js/flexible.js"></script>
-  <link rel="stylesheet" href="./css/init.css" class="href" />
-  <link rel="stylesheet" href="./css/index.css" class="href" />
-</head>
-
-<body>
-  <header><span class="back">返回</span> 赠送优惠券</header>
-  <section class="logo-box clearfix">
-    <img class="fl logo" src="./images/logo.png" alt="" />
-    <div class="fl title-box">
-      <div class="title">点击领取收入您的券包吧</div>
-      <div class="subtitle">
-        <span class="theme-color"> 花非官方 </span> 赠送给您
-        <span class="theme-color"> 7 </span> 张优惠券
-      </div>
-    </div>
-  </section>
-  <section class="ticket-box">
-    <div class="ticket" v-for="ticket in ticketList" v-cloak>
-      <div class="outline">
-        <div class="t-left">
-          <div class="price">{{ticket.money}}</div>
-          <div class="condition">{{ticket.rule}}</div>
+  <body>
+    <header><span class="back">返回</span> 赠送优惠券</header>
+    <section class="logo-box clearfix">
+      <img class="fl logo" src="./images/logo.png" alt="" />
+      <div class="fl title-box">
+        <div class="title">点击领取收入您的券包吧</div>
+        <div class="subtitle">
+          <span class="theme-color"> 花非官方 </span> 赠送给您
+          <span class="theme-color"> 7 </span> 张优惠券
         </div>
-        <div class="t-right">
-          <div class="ticket-name">{{ticket.coupon_name}}</div>
-          <div class="ticket-date">
-            <p>有效期至</p>
-            <p>{{ticket.time_end_use}}</p>
+      </div>
+    </section>
+    <section class="ticket-box">
+      <div class="ticket" v-for="ticket in ticketList" v-cloak>
+        <div class="outline">
+          <div class="t-left">
+            <div class="price">{{ ticket.money }}</div>
+            <div class="condition">{{ ticket.rule }}</div>
           </div>
-          <button class="btn-get">立即领取</button>
+          <div class="t-right">
+            <div class="ticket-name">{{ ticket.coupon_name }}</div>
+            <div class="ticket-date">
+              <p>有效期至</p>
+              <p>{{ ticket.time_end_use }}</p>
+            </div>
+            <button v-bind:data-id="ticket.coupon_id" class="btn-get">
+              立即领取
+            </button>
+          </div>
+        </div>
+        <div class="detail">
+          <div class="fold">详细信息 <button class="btn-open"></button></div>
+          <div class="open" v-html="ticket.desc"></div>
         </div>
       </div>
-      <div class="detail">
-        <div class="fold">详细信息 <button class="btn-open"></button></div>
-        <div class="open" v-html="ticket.desc">
+    </section>
+    <footer><button class="btn-getAll" type="button">一键领取</button></footer>
+    <div class="layer-form layer-free  hidden">
+      <div class="layer-form-content layer-free-content">
+        <div class="layer-title">免费领券</div>
+        <div class="form-box">
+          <input
+            class="username"
+            type="text"
+            placeholder="请输入您的手机号码/邮箱号码"
+          />
+          <input
+            class="password"
+            type="text"
+            placeholder="请输入您的账户密码"
+          />
+          <p class="tips">还没有账户？赶紧注册一个!</p>
+          <button class="btn-submit btn-login">立即领取</button>
         </div>
+        <img class="icon-close" src="./images/icon_close.png" alt="" />
       </div>
     </div>
-  </section>
-  <footer><button class="btn-getAll" type="button">一键领取</button></footer>
-  <div class="layer-form layer-free  hidden">
-    <div class="layer-form-content layer-free-content">
-      <div class="layer-title">免费领券</div>
-      <div class="form-box">
-        <input class="username" type="text" placeholder="请输入您的手机号码/邮箱号码">
-        <input class="password" type="text" placeholder="请输入您的账户密码">
-        <p class="tips">还没有账户？赶紧注册一个!</p>
-        <button class="btn-submit btn-login">立即领取</button>
-      </div>
-      <img class="icon-close" src="./images/icon_close.png" alt="">
-    </div>
-  </div>
-  <div class="layer-form layer-register hidden">
-    <div class="layer-form-content layer-register-content">
-      <div class="layer-title">注册</div>
-      <div class="form-box">
-        <input class="username mobile" type="text" placeholder="请输入您的手机号码">
-        <div class="form-row">
-          <input class="password code" type="text" placeholder="请输入短信验证码">
-          <button class="btn-authCode">获取验证码</button>
+    <div class="layer-form layer-register hidden">
+      <div class="layer-form-content layer-register-content">
+        <div class="layer-title">注册</div>
+        <div class="form-box">
+          <input
+            class="username mobile"
+            type="text"
+            placeholder="请输入您的手机号码"
+            maxlength="11"
+          />
+          <div class="form-row">
+            <input
+              class="password code"
+              type="text"
+              placeholder="请输入短信验证码"
+            />
+            <button class="btn-authCode">获取验证码</button>
+          </div>
+          <p class="tips hasCode"></p>
+          <button class="btn-submit btn-register">注册并领取</button>
         </div>
-        <p class="tips hasCode"></p>
-        <button class="btn-submit btn-register">注册并领取</button>
+        <img class="icon-close" src="./images/icon_close.png" alt="" />
       </div>
-      <img class="icon-close" src="./images/icon_close.png" alt="">
     </div>
-  </div>
-  <div class="layer-success hidden">
-    <div class="layer-success-content">
-      <div class="layer-title">领取成功</div>
-      <p class="desc">
-        优惠券已成功放入您的券包，请登录<br />
-        接单助手app --我的-我的券包 查看使用！
-      </p>
-      <button class="btn-openApp">打开APP</button>
-      <img class="icon-close" src="./images/icon_close.png" alt="">
+    <div class="layer-success hidden">
+      <div class="layer-success-content">
+        <div class="layer-title">领取成功</div>
+        <p class="desc">
+          优惠券已成功放入您的券包，请登录<br />
+          接单助手app --我的-我的券包 查看使用！
+        </p>
+        <button class="btn-openApp">打开APP</button>
+        <img class="icon-close" src="./images/icon_close.png" alt="" />
+      </div>
     </div>
-  </div>
-  <script src="./libs/require/require.js" data-main="./js/index.js"></script>
-  <script src="./libs/require/require.config.js"></script>
-</body>
-
+    <script src="./libs/require/require.js" data-main="./js/index.js"></script>
+    <script src="./libs/require/require.config.js"></script>
+  </body>
 </html>
